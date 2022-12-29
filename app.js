@@ -7,8 +7,8 @@ const sauceRoutes = require('./routes/sauces');
 
 const app = express();
 
-// connexion à la BDD //
 
+// database connexion //
 mongoose.connect('mongodb+srv://bob:Rush4gates@atlascluster.gqz29cn.mongodb.net/?retryWrites=true&w=majority',
   { useNewUrlParser: true,
     useUnifiedTopology: true })
@@ -17,9 +17,14 @@ mongoose.connect('mongodb+srv://bob:Rush4gates@atlascluster.gqz29cn.mongodb.net/
 
   app.use(express.json());
 
+  // general middleware, for all requests //
+
   app.use((req, res, next) => {
+    // everybody can access to our API //
     res.setHeader('Access-Control-Allow-Origin', '*');
+    // Allowing headers //
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
+    // Allowing request types//
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
   });
