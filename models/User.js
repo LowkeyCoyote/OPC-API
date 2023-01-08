@@ -10,4 +10,5 @@ const userSchema = mongoose.Schema({
 // plugin for unique fields //
 userSchema.plugin(uniqueValidator);
 
+
 module.exports = mongoose.model('User', userSchema);
