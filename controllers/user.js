@@ -8,7 +8,6 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/User');
 
 
-
 exports.signup = (req, res, next) => {
     
     // regex for password, at least 8 char, one upper and one number //

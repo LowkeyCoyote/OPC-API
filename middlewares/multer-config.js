@@ -4,7 +4,6 @@ const multer = require('multer');
 // Middleware de configuration de Multer //
 // On enregistre les images dans le dossier image //
 
-
 const MIME_TYPES = {
   'image/jpg': 'jpg',
   'image/jpeg': 'jpg',

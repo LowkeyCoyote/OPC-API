@@ -19,13 +19,6 @@ app.use(helmet.contentSecurityPolicy({
   }
 }));
 
-
-// importer module dotenv
-// from dotenv pour password et user
-// dotenv gitignore
-
-
-
 // database connexion //
 mongoose.connect(`mongodb+srv://${process.env.USERNAME_DB}:${process.env.PASSWORD_DB}@atlascluster.gqz29cn.mongodb.net/?retryWrites=true&w=majority`,
   { useNewUrlParser: true,
@@ -46,8 +39,6 @@ mongoose.connect(`mongodb+srv://${process.env.USERNAME_DB}:${process.env.PASSWOR
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
     next();
   });
-
-
 
 app.use('/api/auth', userRoutes)
 app.use('/api/sauces',sauceRoutes)
